@@ -4,7 +4,14 @@ li {list-style:none;}
 a {text-decoration:none;}
 
 .wrapper {width:1903px;height:100%;margin:0 auto;}
-header {position:absolute;z-index:10;width:1903px;transition: all 1s;}
+header {position:absolute;z-index:10;width:1903px;}
+.header:after {content:"";display:block;clear:both;}
+.header.on {background:#fff;border-bottom:1px solid #e5e5e5;}
+.header.on .logo {color:#1b2252;}
+.header.on nav a {color:#1b2252;}
+.header.on nav li.on {background:#f7f9fd;}
+.header.on nav li.on a {color:#59c6fd;}
+
 main {float:left;width:1553px;height:100%;}
 main .panel {position:absolute;top:50%;margin-left:245px;transform:translateY(-50%);}
 main .panel .tit {font-size:50px;color:#ffffff;line-height:1.4;}
@@ -12,17 +19,17 @@ main .panel .txt {font-size:30px;color:#ffffff;line-height:1.4;}
 main .panel .more {width:210px;margin-top:74px;border:2px solid #ffffff;border-radius:25px;background:#3d4dce;font-size:16px;line-height:50px;text-align:center;}
 main .panel .more a {color:#ffffff;}
 .logo {position:relative;float:left;margin-left:40px;font-size:30px;font-weight:bold;color:#ffffff;line-height:96px;z-index:20;}
-nav {position:relative;float:right;margin-right:375px;z-index:20;}
+nav {float:right;margin-right:375px;z-index:20;}
 nav ul li {float:left;padding:0 25px;line-height:96px;}
 nav ul li a {font-size:16px;font-weight:bold;color:#ffffff;}
-.dev {display:none;position:relative;z-index:15;width:100%;height:187px;background:#ffffff;margin-top:96px;}
-.dev > li > a {position:absolute;top:139px;left:322px;padding:0 20px;height:284px;font-weight:bold;color:#3341a6;line-height:45px;}
+.dev {display:none;position:absolute;z-index:15;width:1903px;height:187px;background:#ffffff;left:0px;}
+.dev > li > a {position:absolute;top:43px;left:322px;padding:0 20px;font-weight:bold;color:#3341a6;line-height:45px;}
 .dev > li.on > a {background:#f7f9fd;color:#59c6fd;}
 .dev > li .panel {display:none;}
 .dev > li.on .panel {display:block;}
-.dev .mo > a {position:absolute;top:189px;left:322px;}
-.dev li ul {position:absolute;top:132px;left:724px;}
-.dev li ul li {float:left;margin:0 42px;}
+.dev .mo > a {position:absolute;top:93px;left:322px;}
+.dev li ul {position:absolute;top:36px;left:724px;}
+.dev li ul li {float:left;margin:0 42px;padding:0;}
 .dev li ul li a::before {display:block;width:48px;height:48px;margin:0 auto 12px;content:"";background:url("./img/ico_menu.png") no-repeat;background-position:0 0;}
 .dev .web ul li+li a::before {background-position: -50px 0;}
 .dev .web ul li+li+li a::before {background-position: -100px 0;}
