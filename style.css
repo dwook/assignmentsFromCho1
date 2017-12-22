@@ -1,5 +1,7 @@
 * {margin:0;padding:0;;}
-html, body {height:100%;background:#1b2252;font-family:"Noto Sans KR", sans-serif;line-height:1.2;}
+html, body {height:100%;;font-family:"Noto Sans KR", sans-serif;line-height:1.2;}
+.wrapper {background:#1b2252}
+.wrapper.ty1 {background:#fff}
 li {list-style:none;}
 a {text-decoration:none;}
 
