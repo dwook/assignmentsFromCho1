@@ -3,6 +3,9 @@ var $header = $("header")
 var $logo =$(".logo")
 var $gnb = $("header nav li")
 var $menu = $("header nav a")
+var $devs = $(".dev > li");
+var $currentDev = $devs.eq(0);
+
 
 $gnb.on("mouseenter", function(){
    
@@ -14,6 +17,10 @@ $gnb.on("mouseenter", function(){
    $logo.css("color", "#1b2252")
    $(this).css("background", "#f7f9fd")
    $(this).find("a").css("color", "#59c6fd")
+
+   if ( $(this).hasClass("devNav") ) {
+        $(".dev").slideDown();
+   }
 
 })
 
@@ -29,4 +36,24 @@ $gnb.on("mouseleave", function(){
         "background":"transparent",
         "color":"#fff"
     })
+
+    if ( $(this).hasClass("devNav") ) {
+        $(".dev").slideUp();
+   }
 })
+
+
+$currentDev.addClass("on");
+$devs.on("click", function(){
+    $currentDev.removeClass("on");
+    $currentDev = $(this) 
+    $currentDev.addClass("on");     
+    }
+);
+
+/*
+$(".devNav, .dev").hover(function(){
+    $(".dev").stop().slideToggle();
+})
+*/
+

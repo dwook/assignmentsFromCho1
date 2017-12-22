@@ -4,24 +4,47 @@ li {list-style:none;}
 a {text-decoration:none;}
 
 .wrapper {width:1903px;height:100%;margin:0 auto;}
-header {position:absolute;width:1903px;z-index:10;}
+header {position:absolute;z-index:10;width:1903px;transition: all 1s;}
 main {float:left;width:1553px;height:100%;}
-.logo {float:left;line-height:96px;font-size:30px;font-weight:bold;color:#ffffff;margin-left:40px;}
-nav {float:right;margin-right:375px;}
+main .panel {position:absolute;top:50%;margin-left:245px;transform:translateY(-50%);}
+main .panel .tit {font-size:50px;color:#ffffff;line-height:1.4;}
+main .panel .txt {font-size:30px;color:#ffffff;line-height:1.4;}
+main .panel .more {width:210px;margin-top:74px;border:2px solid #ffffff;border-radius:25px;background:#3d4dce;font-size:16px;line-height:50px;text-align:center;}
+main .panel .more a {color:#ffffff;}
+.logo {position:relative;float:left;margin-left:40px;font-size:30px;font-weight:bold;color:#ffffff;line-height:96px;z-index:20;}
+nav {position:relative;float:right;margin-right:375px;z-index:20;}
 nav ul li {float:left;padding:0 25px;line-height:96px;}
-nav ul li a {font-size:16px;color:#ffffff;}
-
+nav ul li a {font-size:16px;font-weight:bold;color:#ffffff;}
+.dev {display:none;position:relative;z-index:15;width:100%;height:187px;background:#ffffff;margin-top:96px;}
+.dev > li > a {position:absolute;top:139px;left:322px;padding:0 20px;height:284px;font-weight:bold;color:#3341a6;line-height:45px;}
+.dev > li.on > a {background:#f7f9fd;color:#59c6fd;}
+.dev > li .panel {display:none;}
+.dev > li.on .panel {display:block;}
+.dev .mo > a {position:absolute;top:189px;left:322px;}
+.dev li ul {position:absolute;top:132px;left:724px;}
+.dev li ul li {float:left;margin:0 42px;}
+.dev li ul li a::before {display:block;width:48px;height:48px;margin:0 auto 12px;content:"";background:url("./img/ico_menu.png") no-repeat;background-position:0 0;}
+.dev .web ul li+li a::before {background-position: -50px 0;}
+.dev .web ul li+li+li a::before {background-position: -100px 0;}
+.dev .web ul li+li+li+li a::before {background-position: -150px 0;}
+.dev .web ul li+li+li+li+li a::before {background-position: -200px 0;}
+.dev .web ul li+li+li+li+li+li a::before {background-position: 0 -50px;}
+.dev .web ul li+li+li+li+li+li+li a::before {background-position: -50px -50px;}
+.dev .mo ul li a::before {background-position: -100px -50px;}
+.dev .mo ul li+li a::before {background-position: -150px -50px;}
+.dev .mo ul li+li+li a::before {background-position: -200px -50px;}
+.dev .panel ul li a {font-weight:bold;color:#3341a6;}
 
 aside {float:left;width:350px;height:100%;}
 aside ul {height:100%;}
-aside ul li {box-sizing:border-box;width:100%;height:33.33333%;padding:30% 11% 8%;background:#3d4ecd;overflow:hidden;}
+aside ul li {overflow:hidden;box-sizing:border-box;width:100%;height:33.33333%;padding:30% 11% 8%;background:#3d4ecd;}
 aside ul li + li {background:#333fa6;}
 aside ul li + li + li {background:#293483;}
 aside ul li p {color:#ffffff;text-align:center;}
 aside ul li .tit {position:relative;font-size:18px;font-weight:bold;line-height:1.4;}
 aside ul li .tit:before {position:absolute;top:-70px;left:50%;content:url("./img/ico_laptop.png");transform:translateX(-50%);}
 aside ul li .txt {font-size:15px;}
-aside ul li .detail {opacity:0;max-width:148px;padding:12px 22px;border:2px solid #ffffff;border-radius:24px;font-size:18px;font-weight:bold;margin:26px auto 0;transition: all 1s;}
-aside ul li .panel {transform: translateY(40px);transition: all 1s;}
-aside ul li:hover .panel{transform: translateY(0px)}
-aside ul li:hover .detail{opacity:1;}
+aside ul li .detail {max-width:148px;margin:26px auto 0;padding:12px 22px;transition:all 1s;opacity:0;border:2px solid #ffffff;border-radius:24px;font-size:18px;font-weight:bold;}
+aside ul li .panel {transition:all 1s;transform:translateY(40px);}
+aside ul li:hover .panel {transform:translateY(0px);}
+aside ul li:hover .detail {opacity:1;}
