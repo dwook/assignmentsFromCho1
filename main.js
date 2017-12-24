@@ -32,18 +32,29 @@ $devs.on("click", function(){
 
 var $tab1_list = $(".cpnt1 .tab li")
 var $currentTab1 = $tab1_list.eq(0)
-var $reversePoint = $tab1_list.eq(2)
-
 $currentTab1.addClass("on").find(".inner").addClass("on");
-$tab1_list.on("click focusin", function(){
+var tab1Move = function(){
 
-  $currentTab1.removeClass("on").find(".inner").stop().animate({"left":"-100%"},"linear").css("left","100%");
-  $currentTab1 = $(this);
-  $currentTab1.addClass("on").find(".inner").addClass("on").css("left","100%").stop().animate({"left":"0px"},"linear");
+    if ($currentTab1.index() == $(this).index()) { 
+        return false;
+    } else if ( $currentTab1.index() < $(this).index() ) {
+        $currentTab1.removeClass("on").find(".inner").stop().animate({"left":"-100%"},"linear").css("left","100%");
+        $currentTab1 = $(this);
+        $currentTab1.addClass("on").find(".inner").addClass("on").css("left","100%").stop().animate({"left":"0px"},"linear");
+    } else if ( $currentTab1.index() > $(this).index() ) {
+        $currentTab1.removeClass("on").find(".inner").stop().animate({"left":"100%"},"linear").css("left","-100%");
+        $currentTab1 = $(this);
+        $currentTab1.addClass("on").find(".inner").addClass("on").css("left","-100%").stop().animate({"left":"0px"},"linear");
+    }
   }
-)
+  $tab1_list.on("focusin", tab1Move );
+  $tab1_list.on("click", tab1Move );
+  
 
 
+
+
+/*
 $currentTab1.addClass("on").find(".inner").addClass("on");
 $tab1_list.on("click focusin", function(){
     
@@ -52,17 +63,4 @@ $tab1_list.on("click focusin", function(){
   $currentTab1.addClass("on").find(".inner").addClass("on").css("left","100%").stop().animate({"left":"0px"},"linear");
   }
 )
-
-$(document).on('keydown', $reversePoint, function(e) {
-    if (e.which == 9) {
-        e.preventDefault();
-
-        $tab1_list.on("focusin", function(){
-            $currentTab1.removeClass("on").find(".inner").stop().animate({"left":"-100%"},"linear").css("left","100%");
-            $currentTab1 = $(this);
-            $currentTab1.addClass("on").find(".inner").addClass("on").css("left","100%").stop().animate({"left":"0px"},"linear");
-            }
-        
-    }
-});
-
+*/
