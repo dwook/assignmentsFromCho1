@@ -19,6 +19,22 @@ $gnb.on("mouseenter", function(){
 })
 
 
+
+$(".background").on("mousemove", function(e){
+
+    var posX = e.pageX;
+    var posY = e.pageY;
+
+    $(".shape1").css({"bottom":0 -(posY/200)+"%", "right":0 -(posX/300)+"%"})
+    $(".shape2").css({"bottom":21 -(posY/300)+"%", "right":17 +(posX/200)+"%"})
+    $(".shape3").css({"bottom":24 +(posY/200)+"%", "right":-18 +(posX/300)+"%"})
+    $(".shape4").css({"bottom":20 -(posY/300)+"%", "right":28 -(posX/200)+"%"})
+})
+
+
+
+
+
 var $devs = $(".dev > li");
 var $currentDev = $devs.eq(0);
     

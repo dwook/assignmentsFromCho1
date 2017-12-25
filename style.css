@@ -15,8 +15,8 @@ header {position:absolute;z-index:10;width:1903px;}
 .header.on nav li.on {background:#f7f9fd;}
 .header.on nav li.on > a {color:#59c6fd;}
 
-main {display:flex;flex:2 0px;height:100%;align-items:center;justify-content:center;}
-main .main_panel {margin-left:-60%;}
+main {position:relative;display:flex;flex:2 0px;height:100%;align-items:center;justify-content:center;}
+main .main_panel {margin-left:-40%;position:absolute;z-index:50;}
 main .main_panel .tit {font-size:50px;color:#ffffff;line-height:1.4;}
 main .main_panel .txt {font-size:30px;color:#ffffff;line-height:1.4;}
 main .main_panel .more {width:210px;margin-top:74px;border:2px solid #ffffff;border-radius:25px;background:#3d4dce;font-size:16px;line-height:50px;text-align:center;}
@@ -101,6 +101,12 @@ nav > ul > li > a {font-size:16px;font-weight:bold;color:#ffffff;line-height:96p
 .dev .mo ul li + li a::before {background-position:-150px -50px;}
 .dev .mo ul li + li + li a::before {background-position:-200px -50px;}
 .dev .panel ul li a {font-weight:bold;color:#3341a6;}
+
+.background{position:absolute;top:0;bottom:0;left:0;right:0;overflow:hidden;}
+.shape1 {position:absolute;bottom:0;right:0;width:1721px;height:905px;background:url("./img/img_04.png")}
+.shape2 {position:absolute;bottom:21%;right:17%;width:504px;height:495px;background:url("./img/img_03.png")}
+.shape3 {position:absolute;bottom:24%;right:-18%;width:535px;height:427px;background:url("./img/img_02.png")}
+.shape4 {position:absolute;bottom:20%;right:28%;width:1076px;height:862px;background:url("./img/img_01.png")}
 
 aside {width:350px;height:100%;}
 aside ul {flex-direction:column;height:100%;}
