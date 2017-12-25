@@ -64,3 +64,90 @@ $tab1_list.on("click focusin", function(){
   }
 )
 */
+
+
+var $prev = $(".prev"); 
+var $next = $(".next");
+var $tab2_list = $(".cpnt2 .tab li");
+var $tab2_length = $(".cpnt2 .tab li").length-1;
+var tab2_Index = 0;
+var $currentTab2 = $tab2_list.eq(0);
+
+
+$(document).ready(function(){
+
+    var $tab2_Width = $(".cpnt2 .tab li").first().outerWidth();
+    var $tab2_length = $(".cpnt2 .tab li").length;
+    var $tab2_totalWidth = $(".cpnt2 .tab").width($tab2_Width*($tab2_length+2));
+    $(".cpnt2 .tab li").first().addClass("tab2_first");
+    $(".cpnt2 .tab li").last().addClass("tab2_last");
+    $(".tab2_first").clone().appendTo(".cpnt2 .tab");
+    $(".tab2_last").clone().prependTo(".cpnt2 .tab");
+    $(".cpnt2 .tab").css({'left':-1*$tab2_Width+'px'});
+    
+    $next.on("click", function(){
+        $(".cpnt2 .tab").stop();
+        var $newPos = $(".cpnt2 .tab").position().left-(1*$tab2_Width);
+        $(".cpnt2 .tab").animate({'left':$newPos+'px'},function() {
+            if (Math.abs($newPos) == (($tab2_length+1)*$tab2_Width))
+                {
+                    $(".cpnt2 .tab").css({'left':-1*$tab2_Width+'px'});   
+                }
+         });
+        return false;
+    });
+
+    $prev.on("click", function(){
+        $(".cpnt2 .tab").stop();
+        var $newPos = $(".cpnt2 .tab").position().left+(1*$tab2_Width);
+        $(".cpnt2 .tab").animate({'left':$newPos+'px'},function() {
+            if (Math.abs($newPos) == 0 )
+                {
+                    $(".cpnt2 .tab").css({'left':(-$tab2_length)*$tab2_Width+'px'});   
+                }
+         });
+        return false;
+    });
+    
+});
+
+
+/*
+
+$('#endless_slider_right').click(function(){
+    $('#slider_images').stop(true,true); //complete any animation still running - in case anyone's a bit click happy... 
+    var $newLeft = $('#slider_images').position().left-(1*$imgWidth);//calculate the new position which is the current position minus the width of one image
+    $('#slider_images').animate({'left':$newLeft+'px'},function(){//slide to the new position...
+       if (Math.abs($newLeft) == (($imgCount+1)*$imgWidth)) //...and if the slider is displaying the last image, which is the clone of the first image...
+          {
+          $('#slider_images').css({'left':-1*$imgWidth+'px'});//...reset the slider back to the first image without animating 
+          }
+       });
+    return false;
+ });
+/*
+$next.on("click", function(){
+
+    $tab2_list.eq(tab2_Index).clone().append();
+    
+    if ( tab2_Index == $tab2_length) {
+        tab2_Index = 0;
+    } else {
+        tab2_Index++;
+    }
+    $(".cpnt2 .tab").animate({"left":"-"+(tab2_Index*100)+"%"})
+
+});
+
+
+$prev.on("click", function(){
+    $currentTab2.find(".tab_panel").css("left","0px").stop().animate({"left":"100%"}).parent("li").removeClass("on");
+    if (tab2_Index == 0) {
+        tab2_Index = $tab2_length;
+    } else {
+        tab2_Index--;     
+    }
+    $currentTab2  = $tab2_list.eq(tab2_Index);
+    $currentTab2.addClass("on").find(".tab_panel").css("left","-100%").stop().animate({"left":"0px"},"linear");   
+});
+*/

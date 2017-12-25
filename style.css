@@ -38,18 +38,18 @@ main .main_panel .more a {color:#ffffff;}
 .cpnt1 .tab_panel .tit {font-size:25px;text-align:left;}
 .cpnt1 .tab_panel .txt {width:100%;}
 
-.cpnt2 {position:relative;}
-.cpnt2 h2.tit + .txt {width:60%;margin-bottom:136px;text-align:center;}
-.cpnt2 .tab li.on {display:block;}
-.cpnt2 .tab li {display:none;}
-.cpnt2 .tab_panel {box-sizing:border-box;width:27%;margin:0 auto;padding:85px 60px 100px;box-shadow:0 10px 40px rgba(0,0,0,0.2);}
+.cpnt2 h2.tit + .txt {width:60%;margin-bottom:70px;text-align:center;}
+.cpnt2 .tab_wrapper {overflow:hidden;position:relative;width:800px;height:2000px;;margin:0 auto;}
+.cpnt2 .tab {position:absolute;top:0;left:0;margin-top:57px;}
+.cpnt2 .tab li {float:left;width:800px;}
+.cpnt2 .tab_panel {width:64.25%;box-sizing:border-box;margin:0 auto;padding:85px 60px 100px;box-shadow:0 10px 40px rgba(0,0,0,0.2);}
 .cpnt2 .inner {position:relative;}
 .cpnt2 .inner:before {display:block;position:absolute;top:-140px;left:50%;margin:0 auto;content:url("./img/tmp_profile1.png");transform:translateX(-50%);}
 .cpnt2 .tab_panel .singer {font-size:23px;color:#000000;line-height:1.4;}
 .cpnt2 .tab_panel .singer:before {float:left;margin-right:27px;content:url("./img/img_quot.png");}
 .cpnt2 .tab_panel .song {margin-bottom:50px;font-size:23px;color:#59c6fd;line-height:1.4;}
 .cpnt2 .tab_panel .txt {font-size:25px;line-height:1.8;text-align:left;}
-.cpnt2 .btn {overflow:hidden;position:absolute;top:60%;width:25px;height:46px;border:none;text-indent:-9999px;}
+.cpnt2 .btn {overflow:hidden;position:absolute;z-index:20;top:600px;width:25px;height:46px;border:none;text-indent:-9999px;}
 .cpnt2 .prev {left:30%;background:url("./img/ico_prev.png");}
 .cpnt2 .next {right:30%;background:url("./img/ico_next.png");}
 
