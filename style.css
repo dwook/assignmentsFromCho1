@@ -38,6 +38,7 @@ main .main_panel .more a {color:#ffffff;}
 .cpnt1 .tab_panel .tit {font-size:25px;text-align:left;}
 .cpnt1 .tab_panel .txt {width:100%;}
 
+.cpnt2 {position:relative;}
 .cpnt2 h2.tit + .txt {width:60%;margin-bottom:70px;text-align:center;}
 .cpnt2 .tab_wrapper {overflow:hidden;position:relative;width:800px;height:2000px;;margin:0 auto;}
 .cpnt2 .tab {position:absolute;top:0;left:0;margin-top:57px;}
@@ -50,12 +51,13 @@ main .main_panel .more a {color:#ffffff;}
 .cpnt2 .tab_panel .song {margin-bottom:50px;font-size:23px;color:#59c6fd;line-height:1.4;}
 .cpnt2 .tab_panel .txt {font-size:25px;line-height:1.8;text-align:left;}
 .cpnt2 .btn {overflow:hidden;position:absolute;z-index:20;top:600px;width:25px;height:46px;border:none;text-indent:-9999px;}
-.cpnt2 .prev {left:30%;background:url("./img/ico_prev.png");}
-.cpnt2 .next {right:30%;background:url("./img/ico_next.png");}
+.cpnt2 .prev {left:0%;background:url("./img/ico_prev.png");}
+.cpnt2 .next {right:0%;background:url("./img/ico_next.png");}
 
 .cpnt3 {width:1084px;}
 .cpnt3 h2.tit {margin-bottom:0px;}
 .cpnt3 h2.tit + .txt {width:60%;text-align:center;}
+.cpnt3 li .more {display:none;}
 .cpnt3 li.on .basic {box-sizing:border-box;border:2px solid #1a2152;}
 .cpnt3 li.on .basic:after {position:relative;top:3px;left:50%;width:0px;height:0px;content:"";transform:translateX(-50%);border-top:8px solid #1a2152;border-right:8px solid transparent;border-left:8px solid transparent;}
 .cpnt3 .tab_panel {float:left;width:33.3333%;}
@@ -65,7 +67,7 @@ main .main_panel .more a {color:#ffffff;}
 .cpnt3 .tab_panel .info {padding:30px;}
 .cpnt3 .tab_panel .info .tit {margin-bottom:14px;font-size:22px;font-weight:bold;}
 .cpnt3 .more {position:relative;width:300%;height:390px;}
-.cpnt3 .more .inner {margin:16px;padding:20px;border:1px solid #d1d1d1;}
+.cpnt3 .more .inner {position:relative;margin:0 16px;padding:20px;border:1px solid #d1d1d1;background:#fff;}
 .cpnt3 .more .inner:after {display:block;clear:both;content:"";}
 .cpnt3 .more .inner .visual {float:left;width:50%;height:349px;margin-right:50px;background:url("./img/tmp_profile3.jpg");}
 .cpnt3 .more .inner .info .tit {font-size:25px;}
@@ -73,6 +75,8 @@ main .main_panel .more a {color:#ffffff;}
 .cpnt3 .second .more {left:-100%;}
 .cpnt3 .third .more {left:-200%;}
 .cpnt3 .close {overflow:hidden;position:absolute;top:20px;right:35px;width:22px;height:22px;border:none;background:url("./img/btn_close.png");text-indent:-9999px;}
+.cpnt3 .space {height:390px;display:none;}
+.cpnt3 .space.on {display:block;}
 
 .logo {float:left;position:relative;z-index:20;margin-left:40px;font-size:30px;font-weight:bold;color:#ffffff;line-height:96px;}
 nav {float:right;z-index:20;margin-right:375px;}

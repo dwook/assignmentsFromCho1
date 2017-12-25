@@ -151,3 +151,29 @@ $prev.on("click", function(){
     $currentTab2.addClass("on").find(".tab_panel").css("left","-100%").stop().animate({"left":"0px"},"linear");   
 });
 */
+
+var $more = $(".more");
+var $close = $(".more .close");
+var $tab3_list = $(".cpnt3 .tab li");
+
+$close.on("click", function(e){
+    e.stopPropagation();
+    
+    $(this).parents(".more").slideUp().parents(".tab").children("li").removeClass("on");
+    $(".space").slideUp();
+
+});
+$tab3_list.on("click", function(){
+    $(".space").hide();
+    $(".more").hide();
+    $tab3_list.removeClass("on");
+    if ($(this).hasClass("first")){
+        $(this).next().next().find(".space").slideDown();
+    }
+    if ($(this).hasClass("second")){
+        $(this).next().find(".space").slideDown();
+    }
+    $(this).addClass("on");
+    $(this).find(".more").slideDown();
+    
+});
